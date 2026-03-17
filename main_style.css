@@ -1,0 +1,965 @@
+@font-face {
+    font-family: "MainFont";
+    src:
+        url("fonts/JejuMyeongjo-Regular.ttf") format("woff2"),
+        url("fonts/JejuMyeongjo-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "quote";
+    src:
+        url("fonts/Italianno-Regular.ttf") format("woff2"),
+        url("fonts/Italianno-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background-color: #151515;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: transparent;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*NAVIGACIJA*/
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 10px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s;
+}
+
+.btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px 5px #5454545c;
+}
+
+.nav-btn {
+    width: 25pt;
+    height: 25pt;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.navigacija {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 23px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/*HERO*/
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 60%;
+    max-width: 1400px;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.tilt-container {
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.zacetek {
+    margin-left: 30px;
+}
+
+#logo-hero {
+    height: 166px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 10px hwb(0 0% 100% / 0.4);
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+}
+
+.zacetek h3 {
+    font-size: clamp(40px, 4vw, 80px);
+    font-family: "MainFont";
+    font-weight: 200;
+    color: white;
+    line-height: 1.1;
+}
+
+.lokacija {
+    display: flex;
+    margin-top: 7px;
+}
+
+.lokacija p {
+    margin-left: 5px;
+    font-family: "MainFont";
+    color: #bebebe;
+    margin-top: 1px;
+}
+
+.o-men {
+    display: flex;
+    width: 390px;
+    justify-content: space-between;
+    font-family: 'MainFont';
+}
+
+/*ABOUT*/
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.content p {
+    width: fit-content;
+    height: fit-content;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #bebebe;
+}
+
+.content img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.about-box {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.quote {
+    text-align: center;
+    color: #bebebe;
+    font-family: 'quote';
+    font-size: 30px;
+}
+
+#steve {
+    margin-top: 10px;
+}
+
+.about-inner {
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 200px;
+    text-align: center;
+}
+
+.about-text p {
+    font-family: "MainFont";
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgb(187, 187, 187);
+}
+
+
+/*ANIMACIJA MED SEKCIJAMI*/
+
+.line {
+    width: 150px;
+    height: 5px;
+    border-radius: 5px;
+    background: #bebebe;
+    position: relative;
+    box-shadow: 0 0 15px 1px rgba(255, 255, 255, 0.4);
+    animation: breath 9s ease-in-out infinite;
+}
+
+@keyframes breath {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        width: 120px;
+    }
+
+    50% {
+        opacity: 1;
+        width: 180px;
+    }
+}
+
+/*PROJECTS*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    justify-items: center;
+    align-items: center;
+    padding: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.glass-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s;
+
+    margin-bottom: 80px;
+}
+
+.glass-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px 10px hsla(0, 0%, 22%, 0.382);
+}
+
+.glass-card img {
+    width: 90%;
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    border-radius: 38px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card h3 {
+    font-size: 25px;
+    color: rgb(218, 218, 218);
+    font-family: "MainFont";
+    letter-spacing: 1px;
+}
+
+.projects-text {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(201, 201, 201);
+    font-family: "MainFont";
+    line-height: 23px;
+}
+
+.p-intro {
+    display: flex;
+    justify-content: center;
+}
+
+#projects-intro {
+    margin-top: 70px;
+    color: #bebebe;
+    font-family: 'MainFont';
+    font-size: 22px;
+    width: 500px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.external-icon {
+    width: 18px;
+    height: 18px;
+    color: rgba(218, 218, 218, 0.6);
+    transition: all 0.3s ease;
+}
+
+/*CONTACTS in FOOTER*/
+
+.contacts {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts img {
+    width: 40px;
+    margin: 10px;
+    transition: all 0.2s;
+}
+
+.contacts img:hover {
+    transform: scale(1.15);
+}
+
+.footer-text {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-text p {
+    color: #bebebe86;
+    font-family: 'MainFont';
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/*SCROLL DOWN ANIMACIJA*/
+
+.scroll {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 999;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.scroll-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'MainFont';
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.mouse-icon {
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scroll-wheel 2s infinite;
+}
+
+@keyframes scroll-wheel {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+}
+
+.scroll.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) scaleY(1.5);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/*TECHNOLOGIES*/
+
+.technologies {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.t-content {
+    display: flex;
+    gap: 50px;
+}
+
+.t-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 150px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.t-card:hover {
+    box-shadow: 0 0 30px 8px #bebebe32;
+}
+
+.t-card img {
+    width: 40px;
+}
+
+.t-card p {
+    color: #bebebe;
+    font-family: 'MainFont';
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+.t-inner {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.t-text {
+    display: flex;
+    justify-content: center;
+}
+
+.t-text p {
+    font-family: "MainFont";
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgb(187, 187, 187);
+    width: 800px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+
+
+
+/*DISCORD COPY TO CLIPBOARD*/
+
+.copy-toast {
+    position: fixed;
+    bottom: 150px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 12px 24px;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.copy-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-check {
+    width: 20px;
+    height: 20px;
+    fill: #00ff88;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
+}
+
+.copy-toast span {
+    color: white;
+    font-family: 'MainFont', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+
+/*CURSOR*/
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transition: transform 0.1s ease-out, opacity 0.3s ease-in-out;
+}
+
+
+
+
+/*SCROLL TRACK v HERO*/
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-area {
+    height: 150vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.main {
+    width: 60%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+::selection {
+    background-color: #bebebe;
+    color: #000000;
+}
+
+::-moz-selection {
+    background-color: #bebebe;
+    color: #000000;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #151515;
+    border-radius: 5px;
+}
+
+/*LOADING SCREEN*/
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.loader {
+    position: relative;
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: spin 1s linear infinite;
+}
+
+.loader:after {
+    color: #006aff;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+    @property --x-0 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 85%;
+    }
+
+    @property --c-0 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: hsla(266, 1%, 12%, 1);
+    }
+
+    @property --s-start-0 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 9%;
+    }
+
+    @property --s-end-0 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 55%;
+    }
+
+    @property --y-0 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 80%;
+    }
+
+    @property --x-1 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 60%;
+    }
+
+    @property --c-1 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: hsla(335, 2%, 22%, 1);
+    }
+
+    @property --y-1 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 24%;
+    }
+
+    @property --s-start-1 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 5%;
+    }
+
+    @property --s-end-1 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 72%;
+    }
+
+    @property --c-2 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: hsla(53, 0%, 0%, 0.49);
+    }
+
+    @property --s-start-2 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 5%;
+    }
+
+    @property --s-end-2 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 52%;
+    }
+
+    @property --y-2 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 82%;
+    }
+
+    @property --x-2 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 13%;
+    }
+
+    @property --c-3 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: hsla(299, 4%, 36%, 1);
+    }
+
+    @property --s-start-3 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 13%;
+    }
+
+    @property --s-end-3 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 68%;
+    }
+
+    @property --y-3 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 7%;
+    }
+
+    @property --x-3 {
+        syntax: "<percentage>";
+        inherits: false;
+        initial-value: 24%;
+    }
+
+    /*ODZADJE BACKGROUND*/
+
+    #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        z-index: -1;
+        pointer-events: none;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+
+        --x-0: 85%;
+        --c-0: hsla(266, 1%, 12%, 1);
+        --y-0: 80%;
+        --x-1: 60%;
+        --c-1: hsla(335, 2%, 22%, 1);
+        --y-1: 24%;
+        --c-2: hsla(53, 0%, 0%, 0.49);
+        --y-2: 82%;
+        --x-2: 13%;
+        --c-3: hsla(299, 4%, 36%, 1);
+        --y-3: 7%;
+        --x-3: 24%;
+
+        background-color: hsla(0, 0%, 0%, 1);
+        background-image:
+            radial-gradient(circle at var(--x-0) var(--y-0),
+                var(--c-0) var(--s-start-0),
+                transparent var(--s-end-0)),
+            radial-gradient(circle at var(--x-1) var(--y-1),
+                var(--c-1) var(--s-start-1),
+                transparent var(--s-end-1)),
+            radial-gradient(circle at var(--x-2) var(--y-2),
+                var(--c-2) var(--s-start-2),
+                transparent var(--s-end-2)),
+            radial-gradient(circle at var(--x-3) var(--y-3),
+                var(--c-3) var(--s-start-3),
+                transparent var(--s-end-3));
+
+        animation: bg-animation 10s linear infinite alternate;
+        background-blend-mode: normal, normal, normal, normal;
+        will-change: transform;
+        contain: strict;
+    }
+
+    @keyframes bg-animation {
+        0% {
+            --x-0: 85%;
+            --y-0: 80%;
+            --x-1: 60%;
+            --y-1: 24%;
+            --x-2: 13%;
+            --y-2: 82%;
+            --x-3: 24%;
+            --y-3: 7%;
+            --c-0: hsla(266, 1%, 12%, 1);
+            --c-1: hsla(335, 2%, 22%, 1);
+            --c-3: hsla(299, 4%, 36%, 1);
+        }
+
+        100% {
+            --x-0: 31%;
+            --y-0: 94%;
+            --x-1: 2%;
+            --y-1: 25%;
+            --x-2: 98%;
+            --y-2: 20%;
+            --x-3: 95%;
+            --y-3: 92%;
+            --c-0: hsla(266, 0%, 12%, 1);
+            --c-1: hsla(0, 4%, 19%, 1);
+            --c-3: hsla(298, 3%, 41%, 1);
+        }
+    }
+
+
+/* Scroll animacija za dive */
+@keyframes autoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* 2. Uporabimo jo na divu */
+.animacija {
+    /* Povežemo animacijo */
+    animation: autoReveal both;
+    
+    /* KLJUČNI DEL: Animacija se zgodi glede na vidnost elementa */
+    animation-timeline: view();
+    
+    /* Določimo, kdaj se animacija začne in konča */
+    /* "entry 10%" pomeni: začni, ko je 10% elementa vstopilo v vidno polje */
+    /* "entry 40%" pomeni: končaj animacijo, ko je 40% elementa že notri */
+    animation-range: entry 10% entry 40%;
+}

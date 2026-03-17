@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Leon Modrijan | Portfolio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main_style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='phone.css'>
+    <script src='main.js' defer></script>
+    <link rel="icon" type="image/png" href="images/logo.webp">
+</head>
+
+<body>
+    <!-- Lading screen -->
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- odzadje -->
+    <div id="bg-canvas"></div>
+
+    <nav>
+        <div class="pre-nav">
+            <div class="navigacija">
+                <div class="btn" onclick="scrollToSection('home')">
+                    <img class="nav-btn" src="images/home.webp" alt="Home">
+                </div>
+                <div class="btn" onclick="scrollToSection('info')">
+                    <img class="nav-btn" src="images/info.webp" alt="Info">
+                </div>
+                <div class="btn" onclick="scrollToSection('projects')">
+                    <img class="nav-btn" src="images/project.webp" alt="Projects">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="scroll">
+        <div class="scroll-content">
+            <span class="scroll-text">Explore Archive</span>
+            <div class="mouse-icon">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="scroll-track" id="home">
+        <div class="scroll-area">
+            <div class="container">
+                <div class="main">
+                    <div class="hero">
+                        <div class="tilt-container">
+                            <img id="logo-hero" src="images/logo.webp" alt="Logo">
+                        </div>
+                        <div class="zacetek">
+                            <h3>Hi, I'm<br>Leon Modrijan</h3>
+                            <div class="lokacija">
+                                <img src="images/pin.webp" alt="Location" style="width: 20px; height: 20px;">
+                                <div class="o-men">
+                                    <p>Logatec, Slovenia</p>
+                                    <p>|</p>
+                                    <p>18 years old</p>
+                                    <p>|</p>
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="about" id="info">
+        <div class="content">
+            <div class="line"></div>
+            <p>About Me</p>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="about-box">
+        <div class="about-inner">
+            <div class="about-text">
+                <p>I’m Leon, a web developer building modern, responsive websites that are clean, fast, and easy to use.
+                    I enjoy turning ideas into websites that look good and actually work.</p>
+            </div>
+        </div>
+        <div class="quote">
+            <p>"Design is not just what it looks like and feels like. Design is how it works."</p>
+            <p id="steve">~ Steve Jobs ~</p>
+        </div>
+    </div>
+
+    <div class="about" id="info">
+        <div class="content">
+            <div class="line"></div>
+            <p>Technologies</p>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="technologies">
+        <div class="t-text">
+            <p>I work mainly with HTML and CSS to build clean, responsive layouts, use JavaScript to add interactivity, and rely on MySQL to handle data behind the scenes. I like keeping things simple on the surface and solid underneath.</p>
+        </div>
+        <div class="t-inner">
+            <div class="t-content">
+                <div class="t-card">
+                    <img src="images/html.webp" alt="HTML Logo">
+                    <p>HTML 5</p>
+                </div>
+
+                <div class="t-card">
+                    <img src="images/css.webp" alt="HTML Logo">
+                    <p>CSS</p>
+                </div>
+
+                <div class="t-card">
+                    <img src="images/js.webp" alt="HTML Logo">
+                    <p>Java Script</p>
+                </div>
+
+                <div class="t-card">
+                    <img src="images/sql.webp" alt="HTML Logo">
+                    <p>MySQL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about" id="projects">
+        <div class="content">
+            <div class="line"></div>
+            <p>Projects</p>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div class="p-intro">
+        <p id="projects-intro">A growing collection of my recent work and digital experiments. Quality over quantity,
+            with more arriving soon.</p>
+    </div>
+    <div class="grid-container">
+        <a href="https://minebit.eu" target="_blank">
+            <div class="glass-card">
+                <img src="images/minebit.webp" alt="MineBit">
+                <div class="card-title">
+                    <h3>MineBit</h3>
+                    <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </div>
+                <p class="projects-text">A community-driven web interface for a closed Minecraft server. Preserving the
+                    digital history of a private technical sanctuary.</p>
+            </div>
+        </a>
+        <a href="https://leonmodrijan.online" target="_blank">
+            <div class="glass-card">
+                <img src="images/portfolio.webp" alt="MineBit">
+                <div class="card-title">
+                    <h3>Portfolio</h3>
+                    <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </div>
+                <p class="projects-text">Designing clean, modern interfaces using glassmorphism and motion to create
+                    memorable digital products.</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <div class="contacts">
+            <a href="mailto:leon.modrijan07@gmail.com" target="_blank" rel="noopener noreferrer"><img
+                    src="images/email.webp" alt="Mail"></a>
+            <a onclick="copyDiscord()" target="_blank" rel="noopener noreferrer"><img src="images/discord.webp"
+                    alt="Discord"></a>
+            <a href="https://instagram.com/leonmodrijan" target="_blank" rel="noopener noreferrer"><img
+                    src="images/instagram.webp" alt="Instagram"></a>
+            <a href="https://github.com/LeonModrijan" target="_blank" rel="noopener noreferrer"><img
+                    src="images/github.webp" alt="GitHub"></a>
+        </div>
+        <div class="footer-text">
+            <p>© 2026 All rights reserved | Developed by Leon Modrijan</p>
+        </div>
+    </footer>
+
+    <div id="copy-toast" class="copy-toast">
+        <div class="toast-content">
+            <svg class="icon-check" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+            </svg>
+            <span>Copied to clipboard</span>
+        </div>
+    </div>
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const offset = 80;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = element.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
